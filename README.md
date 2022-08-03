@@ -2,9 +2,10 @@
 
 ## how to run istio e2e 
 
-// create kind cluster
+create kind cluster
+```
 ./prow/integ-suite-kind.sh  --skip-cleanup
-
+```
 export HUB=localhost:5000
 export TAG=8-3
 
