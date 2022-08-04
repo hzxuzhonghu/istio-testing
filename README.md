@@ -2,7 +2,7 @@
 
 ## how to run istio e2e 
 
-create kind cluster
+create kind cluster and kind registry
 ```
 ./prow/integ-suite-kind.sh  --skip-cleanup
 ```
@@ -13,6 +13,6 @@ make docker
 
 set up istio and run test case
 ```
-go test  -tags=integ -vet=off ./tests/integration/security/... -timeout 30m  --istio.test.hub=${HUB} --istio.test.tag=${TAG} --istio.test.nocleanup \
+go test -v  -tags=integ -vet=off ./tests/integration/security/... -timeout 30m  --istio.test.hub=${HUB} --istio.test.tag=${TAG} --istio.test.nocleanup \
 --test.run=TestAuthz_WorkloadSelector
 ```
